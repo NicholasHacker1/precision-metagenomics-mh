@@ -1,13 +1,4 @@
 #!/bin/bash
-#SBATCH --job-name=MhAS_CatNames
-#SBATCH --time=24:00:00
-#SBATCH --nodes=1
-#SBATCH --ntasks-per-node=48
-#SBATCH --mem=360G
-#SBATCH --output=MhAS_CatNames.%j
-#SBATCH --mail-type=ALL
-#SBATCH --mail-user=nhacker@tamu.edu
-#SBATCH --account=132741167574
 
 module load GCCcore/13.2.0
 
