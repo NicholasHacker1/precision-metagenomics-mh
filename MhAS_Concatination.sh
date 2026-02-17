@@ -2,10 +2,10 @@
 
 module load GCCcore/13.2.0
 
-outdir="/scratch/user/nhacker/Mh_Adaptive_Sampling/Cat_reads"
+outdir="/path/to/output"
 mkdir -p "$outdir"
 
-cd /scratch/user/nhacker/Mh_Adaptive_Sampling
+cd /path/to/input
 for i in *Group/Pool*; do
     echo "Processing $i"
     for barcode_dir in "$i"/fastq_pass/barcode*; do
