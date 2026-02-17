@@ -1,23 +1,14 @@
 #!/bin/bash
-#SBATCH --job-name=MhAS_minimap
-#SBATCH --time=24:00:00
-#SBATCH --nodes=1
-#SBATCH --ntasks-per-node=48
-#SBATCH --mem=360G
-#SBATCH --output=MhAS_minimap.%j
-#SBATCH --mail-type=ALL
-#SBATCH --mail-user=nhacker@tamu.edu
-#SBATCH --account=132741167574
 
 # Load Modules that will be used in code
 module load GCC/13.2.0
 module load minimap2/2.28
 module load SAMtools/1.21
 
-as_dir="/scratch/user/nhacker/Mh_Adaptive_Sampling"
+as_dir="path/to/adaptive_sampling"
 mini_dir="${as_dir}/Minimap2"
-filter_dir="/scratch/user/nhacker/Mh_Adaptive_Sampling/Filtered_reads"
-ref_dir="/scratch/user/nhacker/Mh_Adaptive_Sampling/MhAS_Ref"
+filter_dir="/path/to/filtered_reads"
+ref_dir="/path/to/reference"
 ref_16S="$ref_dir/16S_combined.fasta"
 ref_Mh="$ref_dir/AS_3G_Reference.fasta"
 
