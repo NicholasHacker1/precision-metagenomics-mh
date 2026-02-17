@@ -1,20 +1,11 @@
 #!/bin/bash
-#SBATCH --job-name=MhAS_base_stats_combined
-#SBATCH --time=24:00:00
-#SBATCH --nodes=1
-#SBATCH --ntasks-per-node=48
-#SBATCH --mem=300G
-#SBATCH --output=MhAS_base_stats_combined.%j
-#SBATCH --mail-type=ALL
-#SBATCH --mail-user=nhacker@tamu.edu
-#SBATCH --account=132741167574
 
 # Load modules
 module load GCC/13.2.0
 module load SAMtools/1.21
 
 # Directories
-as_dir="/scratch/user/nhacker/Mh_Adaptive_Sampling"
+as_dir="/path/to/adaptive_sampling"
 mini_dir="${as_dir}/Minimap2"
 final_dir="${as_dir}/Combined_Base_Stats"
 mkdir -p "$final_dir"
