@@ -1,23 +1,13 @@
 #!/bin/sh
 
-#SBATCH --job-name=Mh_AS_Centrifuge
-#SBATCH --time=24:00:00
-#SBATCH --nodes=1
-#SBATCH --ntasks-per-node=1
-#SBATCH --mem=360G
-#SBATCH --output=centrifuge_output.%j
-#SBATCH --account=132741167574
-##SBATCH --mail-type=ALL
-##SBATCH --mail-user=nhacker@tamu.edu
-
 module load Anaconda3
 source activate centrifuge_env
 
-index_path="/scratch/user/nhacker/Mh_Adaptive_Sampling/Centrifuge/centrifuge_index/centrifuge_index_archaea_bacteria"
-out_path="/scratch/user/nhacker/Mh_Adaptive_Sampling/Centrifuge/Classification_Results"
+index_path="/path/to/index"
+out_path="/path/to/output"
 centrifuge_output="${out_path}/centrifuge_output"
 kreport_output="${out_path}/kreport_output"
-input_path="/scratch/user/nhacker/Mh_Adaptive_Sampling/Minimap2_Fastq/Fastq"
+input_path="path/to/input"
 
 mkdir -p $centrifuge_output
 mkdir -p $kreport_output
